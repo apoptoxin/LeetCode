@@ -59,14 +59,14 @@
 		C62132EB20E0DB14007EEFA4 /* p1_10 */ = {
 			isa = PBXGroup;
 			children = (
-				C62132F020E0DB90007EEFA4 /* problem1.c */,
 				C62132EC20E0DB90007EEFA4 /* problem1.h */,
-				C62132F120E0DB90007EEFA4 /* problem2.c */,
+				C62132F020E0DB90007EEFA4 /* problem1.c */,
 				C62132F220E0DB90007EEFA4 /* problem2.h */,
-				C62132F320E0DB90007EEFA4 /* problem3.c */,
+				C62132F120E0DB90007EEFA4 /* problem2.c */,
 				C62132ED20E0DB90007EEFA4 /* problem3.h */,
-				C62132EE20E0DB90007EEFA4 /* problem4.c */,
+				C62132F320E0DB90007EEFA4 /* problem3.c */,
 				C62132EF20E0DB90007EEFA4 /* problem4.h */,
+				C62132EE20E0DB90007EEFA4 /* problem4.c */,
 			);
 			path = p1_10;
 			sourceTree = "<group>";
