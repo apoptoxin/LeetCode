@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C62A94B220E087070069285D /* problem2.c in Sources */ = {isa = PBXBuildFile; fileRef = C62A94B120E087070069285D /* problem2.c */; };
-		C62A94B920E08C3E0069285D /* problem3.c in Sources */ = {isa = PBXBuildFile; fileRef = C62A94B820E08C3E0069285D /* problem3.c */; };
+		C62132F420E0DB90007EEFA4 /* problem4.c in Sources */ = {isa = PBXBuildFile; fileRef = C62132EE20E0DB90007EEFA4 /* problem4.c */; };
+		C62132F520E0DB90007EEFA4 /* problem1.c in Sources */ = {isa = PBXBuildFile; fileRef = C62132F020E0DB90007EEFA4 /* problem1.c */; };
+		C62132F620E0DB90007EEFA4 /* problem2.c in Sources */ = {isa = PBXBuildFile; fileRef = C62132F120E0DB90007EEFA4 /* problem2.c */; };
+		C62132F720E0DB90007EEFA4 /* problem3.c in Sources */ = {isa = PBXBuildFile; fileRef = C62132F320E0DB90007EEFA4 /* problem3.c */; };
 		C6B2539B20DF36E5006CC395 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B2539A20DF36E5006CC395 /* main.c */; };
-		C6B253A320DF391F006CC395 /* problem1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B253A220DF391F006CC395 /* problem1.c */; };
 		C6B253A720DF3D4D006CC395 /* sort.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B253A620DF3D4D006CC395 /* sort.c */; };
 		C6B253AE20DF4724006CC395 /* swap.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B253AD20DF4724006CC395 /* swap.c */; };
 /* End PBXBuildFile section */
@@ -28,14 +29,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C62A94B020E087070069285D /* problem2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem2.h; sourceTree = "<group>"; };
-		C62A94B120E087070069285D /* problem2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem2.c; sourceTree = "<group>"; };
-		C62A94B720E08C3E0069285D /* problem3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem3.h; sourceTree = "<group>"; };
-		C62A94B820E08C3E0069285D /* problem3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem3.c; sourceTree = "<group>"; };
+		C62132EC20E0DB90007EEFA4 /* problem1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem1.h; sourceTree = "<group>"; };
+		C62132ED20E0DB90007EEFA4 /* problem3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem3.h; sourceTree = "<group>"; };
+		C62132EE20E0DB90007EEFA4 /* problem4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = problem4.c; sourceTree = "<group>"; };
+		C62132EF20E0DB90007EEFA4 /* problem4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem4.h; sourceTree = "<group>"; };
+		C62132F020E0DB90007EEFA4 /* problem1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = problem1.c; sourceTree = "<group>"; };
+		C62132F120E0DB90007EEFA4 /* problem2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = problem2.c; sourceTree = "<group>"; };
+		C62132F220E0DB90007EEFA4 /* problem2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem2.h; sourceTree = "<group>"; };
+		C62132F320E0DB90007EEFA4 /* problem3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = problem3.c; sourceTree = "<group>"; };
 		C6B2539720DF36E5006CC395 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B2539A20DF36E5006CC395 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		C6B253A120DF391F006CC395 /* problem1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem1.h; sourceTree = "<group>"; };
-		C6B253A220DF391F006CC395 /* problem1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem1.c; sourceTree = "<group>"; };
 		C6B253A520DF3D4D006CC395 /* sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sort.h; sourceTree = "<group>"; };
 		C6B253A620DF3D4D006CC395 /* sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sort.c; sourceTree = "<group>"; };
 		C6B253AC20DF4724006CC395 /* swap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = swap.h; sourceTree = "<group>"; };
@@ -53,6 +56,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C62132EB20E0DB14007EEFA4 /* p1_10 */ = {
+			isa = PBXGroup;
+			children = (
+				C62132F020E0DB90007EEFA4 /* problem1.c */,
+				C62132EC20E0DB90007EEFA4 /* problem1.h */,
+				C62132F120E0DB90007EEFA4 /* problem2.c */,
+				C62132F220E0DB90007EEFA4 /* problem2.h */,
+				C62132F320E0DB90007EEFA4 /* problem3.c */,
+				C62132ED20E0DB90007EEFA4 /* problem3.h */,
+				C62132EE20E0DB90007EEFA4 /* problem4.c */,
+				C62132EF20E0DB90007EEFA4 /* problem4.h */,
+			);
+			path = p1_10;
+			sourceTree = "<group>";
+		};
 		C6B2538E20DF36E5006CC395 = {
 			isa = PBXGroup;
 			children = (
@@ -72,14 +90,9 @@
 		C6B2539920DF36E5006CC395 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				C62132EB20E0DB14007EEFA4 /* p1_10 */,
 				C6B253A420DF3D35006CC395 /* utils */,
 				C6B2539A20DF36E5006CC395 /* main.c */,
-				C6B253A120DF391F006CC395 /* problem1.h */,
-				C6B253A220DF391F006CC395 /* problem1.c */,
-				C62A94B020E087070069285D /* problem2.h */,
-				C62A94B120E087070069285D /* problem2.c */,
-				C62A94B720E08C3E0069285D /* problem3.h */,
-				C62A94B820E08C3E0069285D /* problem3.c */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -151,12 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62132F620E0DB90007EEFA4 /* problem2.c in Sources */,
+				C62132F420E0DB90007EEFA4 /* problem4.c in Sources */,
 				C6B253A720DF3D4D006CC395 /* sort.c in Sources */,
+				C62132F520E0DB90007EEFA4 /* problem1.c in Sources */,
 				C6B2539B20DF36E5006CC395 /* main.c in Sources */,
-				C62A94B220E087070069285D /* problem2.c in Sources */,
+				C62132F720E0DB90007EEFA4 /* problem3.c in Sources */,
 				C6B253AE20DF4724006CC395 /* swap.c in Sources */,
-				C6B253A320DF391F006CC395 /* problem1.c in Sources */,
-				C62A94B920E08C3E0069285D /* problem3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
