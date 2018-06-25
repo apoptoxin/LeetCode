@@ -48,5 +48,4 @@ for (int i = 0, curLength = 0; i < len ; i++) {
     }
 ```
 
-其中curLength表示以当前为结尾的无重复子串长度，遍历的每次循环都是在计算这个长度，如果比totalLength大就更新到结果，最后totalLength就是所需的结果。代码复杂度为
-\\(O(n)\\)
+其中curLength表示以当前为结尾的无重复子串长度，遍历的每次循环都是在计算这个长度，如果比totalLength大就更新到结果，最后totalLength就是所需的结果。代码复杂度![](http://chart.googleapis.com/chart?cht=tx&chl=O(n))
