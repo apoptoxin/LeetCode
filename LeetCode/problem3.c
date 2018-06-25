@@ -9,8 +9,9 @@
 #include "problem3.h"
 
 int lengthOfLongestSubstring(char* s) {
-    int map[10000];
-    for (int i = 0; i < 10000 ; i++) {
+    //标准ASCII只有128个字符,后来IBM扩展为256个字符,被称为扩展ASCII,但现在不属于国际标准
+    int map[128];
+    for (int i = 0; i < 128 ; i++) {
         map[i] = -1;
     }
     int len = (int)strlen(s);
