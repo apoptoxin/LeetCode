@@ -7,12 +7,11 @@
 //
 
 #include <stdio.h>
-#include "problem4.h"
+#include "problem5.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int num1[] = {3,3,3,3};
-    int num2[] = {3,3,3,3};
-    printf("%f\n",findMedianSortedArrays(num1, sizeof(num1)/sizeof(int), num2, sizeof(num2)/sizeof(int)));
+    char *s = "dddddddd";
+    printf("%s\n",longestPalindrome(s));
     return 0;
 }
