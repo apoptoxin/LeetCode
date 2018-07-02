@@ -7,11 +7,11 @@
 //
 
 #include <stdio.h>
-#include "problem5.h"
+#include "problem6.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    char *s = "dddddddd";
-    printf("%s\n",longestPalindrome(s));
+    char *s = "PAYPALISHIRING";
+    printf("%s\n",convert(s, 3));
     return 0;
 }

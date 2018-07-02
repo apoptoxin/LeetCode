@@ -119,3 +119,74 @@ if (nums1Size == 0) {
 1. O(n2)方法，遍历两次，以每个元素为中轴，向两边找满足条件的最大的，每个元素为轴做一遍为O(n)，每个元素再往两边扩展，最多又是一个O(n)。
 2. 动态规划：f(x,y)表示从x开始到y的子串为回文，则f(x,y)=f(x+1,y-1) && s[x] == s[y]。二维数组遍历O(n)。
 
+### p6 实现一个将字符串进行指定行数变换的函数
+
+找规律，按行遍历即可，2kn-2k+-p p表示列，k表示行 ，所以外层for循环为p递增，内层为p递增，在判断边界条件时候遇到些问题。最后的代码如下：
+
+```c
+char* convert(char* s, int numRows) {
+    int n = numRows;
+    int length = strlen(s);
+    if (numRows == 1 || length < 1 || length <= numRows) {
+        return s;
+    }
+    char *result = malloc(sizeof(char) * (length + 1));
+    result[length] = '\0';
+    int i = 0;
+    int column = (length+(2*n-3)/(2*(n-1)));
+//    n-1不会等于1了
+    for (int p = 0; p < n ; p++) {
+        for (int k = 0 ; k < column ; k++) {
+            if (p == 0 || p == n-1) {
+                if (2*k*n - 2*k - p >= 0 && 2*k*n - 2*k - p < length) {
+                    result[i] = s[2*k*n - 2*k - p];
+                    ++i;
+//                    printf("%d个元素是原下标%d\n",i-1,2*k*n - 2*k - p);
+                }
+            } else {
+                if (2*k*n - 2*k - p >= 0  && 2*k*n - 2*k - p < length) {
+                    result[i] = s[2*k*n - 2*k - p];
+                    ++i;
+//                    printf("%d个元素是原下标%d\n",i-1,2*k*n - 2*k - p);
+                }
+                if (2*k*n - 2*k + p < length && 2*k*n - 2*k + p >= 0) {
+                    result[i] = s[2*k*n - 2*k + p];
+                    ++i;
+//                    printf("%d个元素是原下标%d\n",i-1,2*k*n - 2*k + p);
+                }
+            }
+            
+        }
+    }
+    return result;
+}
+```
+
+复杂度为O(1)
+
+看了下答案：
+
+```c++
+class Solution {
+public:
+    string convert(string s, int numRows) {
+
+        if (numRows == 1) return s;
+
+        string ret;
+        int n = s.size();
+        int cycleLen = 2 * numRows - 2;
+
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j + i < n; j += cycleLen) {
+                ret += s[j + i];
+                if (i != 0 && i != numRows - 1 && j + cycleLen - i < n)
+                    ret += s[j + cycleLen - i];
+            }
+        }
+        return ret;
+    }
+};
+```
+
+这个代码在c下可以么？。。感觉没改明白

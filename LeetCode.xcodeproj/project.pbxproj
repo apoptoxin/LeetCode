@@ -15,6 +15,7 @@
 		C6B2539B20DF36E5006CC395 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B2539A20DF36E5006CC395 /* main.c */; };
 		C6B253A720DF3D4D006CC395 /* sort.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B253A620DF3D4D006CC395 /* sort.c */; };
 		C6B253AE20DF4724006CC395 /* swap.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B253AD20DF4724006CC395 /* swap.c */; };
+		C6EB572820E812EE007B6AC3 /* problem6.c in Sources */ = {isa = PBXBuildFile; fileRef = C6EB572720E812EE007B6AC3 /* problem6.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		C6B253A620DF3D4D006CC395 /* sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sort.c; sourceTree = "<group>"; };
 		C6B253AC20DF4724006CC395 /* swap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = swap.h; sourceTree = "<group>"; };
 		C6B253AD20DF4724006CC395 /* swap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = swap.c; sourceTree = "<group>"; };
+		C6EB572620E812EE007B6AC3 /* problem6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem6.h; sourceTree = "<group>"; };
+		C6EB572720E812EE007B6AC3 /* problem6.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem6.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				C62132EE20E0DB90007EEFA4 /* problem4.c */,
 				C632313920E35B9D00D341EC /* problem5.h */,
 				C632313A20E35B9D00D341EC /* problem5.c */,
+				C6EB572620E812EE007B6AC3 /* problem6.h */,
+				C6EB572720E812EE007B6AC3 /* problem6.c */,
 			);
 			path = p1_10;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				C62132F420E0DB90007EEFA4 /* problem4.c in Sources */,
 				C6B253A720DF3D4D006CC395 /* sort.c in Sources */,
 				C62132F520E0DB90007EEFA4 /* problem1.c in Sources */,
+				C6EB572820E812EE007B6AC3 /* problem6.c in Sources */,
 				C6B2539B20DF36E5006CC395 /* main.c in Sources */,
 				C62132F720E0DB90007EEFA4 /* problem3.c in Sources */,
 				C6B253AE20DF4724006CC395 /* swap.c in Sources */,
