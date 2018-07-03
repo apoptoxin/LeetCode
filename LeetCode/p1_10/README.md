@@ -190,3 +190,26 @@ public:
 ```
 
 这个代码在c下可以么？。。感觉没改明白
+
+## p7 反转整数
+
+思路比较简单，就是模除10得到每位数，temp = temp * 10 + 模除得到的结果就可以。主要是判断是否越界。不能计算temp之后再判断，用最大最小值减去模除结果之后除10与当前temp比较。代码如下:
+
+```c
+int reverse(int x) {
+    int max = (pow(2,30) - 1) * 2 + 1;
+    int min = -1 * max - 1;
+    int temp = 0;
+    while (x != 0) {
+        int addition = x % 10;
+        if ((x<0 && temp < (min - addition) / 10) || (x >= 0 && temp > (max - addition) / 10)) {
+            return 0;
+        } else {
+            temp = temp * 10 + addition;
+        }
+        x = x/10;
+    }
+    return temp;
+}
+```
+

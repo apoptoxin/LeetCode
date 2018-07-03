@@ -7,11 +7,11 @@
 //
 
 #include <stdio.h>
-#include "problem6.h"
+#include "problem7.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    char *s = "PAYPALISHIRING";
-    printf("%s\n",convert(s, 3));
+//    char *s = "PAYPALISHIRING";
+    printf("%d\n",reverse(-256));
     return 0;
 }
