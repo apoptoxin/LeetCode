@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C613ED9020EC698500201C67 /* problem9.c in Sources */ = {isa = PBXBuildFile; fileRef = C613ED8F20EC698500201C67 /* problem9.c */; };
 		C62132F420E0DB90007EEFA4 /* problem4.c in Sources */ = {isa = PBXBuildFile; fileRef = C62132EE20E0DB90007EEFA4 /* problem4.c */; };
 		C62132F520E0DB90007EEFA4 /* problem1.c in Sources */ = {isa = PBXBuildFile; fileRef = C62132F020E0DB90007EEFA4 /* problem1.c */; };
 		C62132F620E0DB90007EEFA4 /* problem2.c in Sources */ = {isa = PBXBuildFile; fileRef = C62132F120E0DB90007EEFA4 /* problem2.c */; };
@@ -33,6 +34,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C613ED8E20EC698500201C67 /* problem9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem9.h; sourceTree = "<group>"; };
+		C613ED8F20EC698500201C67 /* problem9.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem9.c; sourceTree = "<group>"; };
 		C62132EC20E0DB90007EEFA4 /* problem1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem1.h; sourceTree = "<group>"; };
 		C62132ED20E0DB90007EEFA4 /* problem3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem3.h; sourceTree = "<group>"; };
 		C62132EE20E0DB90007EEFA4 /* problem4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = problem4.c; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				C6FE832720EB10EE00D03434 /* problem7.c */,
 				C6FE832920EB1C1B00D03434 /* problem8.h */,
 				C6FE832A20EB1C1B00D03434 /* problem8.c */,
+				C613ED8E20EC698500201C67 /* problem9.h */,
+				C613ED8F20EC698500201C67 /* problem9.c */,
 			);
 			path = p1_10;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				C62132F420E0DB90007EEFA4 /* problem4.c in Sources */,
 				C6B253A720DF3D4D006CC395 /* sort.c in Sources */,
 				C62132F520E0DB90007EEFA4 /* problem1.c in Sources */,
+				C613ED9020EC698500201C67 /* problem9.c in Sources */,
 				C6EB572820E812EE007B6AC3 /* problem6.c in Sources */,
 				C6B2539B20DF36E5006CC395 /* main.c in Sources */,
 				C6FE832820EB10EE00D03434 /* problem7.c in Sources */,

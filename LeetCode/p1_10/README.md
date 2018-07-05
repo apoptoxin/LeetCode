@@ -259,3 +259,54 @@ int myAtoi(char* str) {
 }
 ```
 
+## p9 判断一个整数是否是回文数
+
+从题目描述中可以得到，负数一定不是回文数，0~9一定是回文数。
+
+思路：
+
+1.先计算出大于等于10的正整数的位数（负数或者小于10上面已经判断过）。
+
+2.将该数字分为左右两部分
+
+3.每次从左右两部分中去一位比较（左边取尾，右边去首）
+
+```c
+bool isPalindrome(int x) {
+    if (x < 0) {
+        return false;
+    } else if (x < 10) {
+        return true;
+    }
+    int length = 0;
+    int temp = x;
+    while (temp != 0) {
+        length ++;
+        temp /= 10;
+    }
+    temp = 1;
+    for (int i = 0; i < length / 2; i++) {
+        temp *= 10;
+    }
+    int left = 1;
+    int right = 1;
+    if (length % 2 == 0) {
+        left = x / temp;
+        right = x % temp;
+    } else {
+        left = x / (temp*10);
+        right = x % temp;
+    }
+    bool result = true;
+    while (left != 0) {
+        int leftSingle = left % 10;
+        left = left / 10;
+        temp /= 10;
+        int rightSingle = right / temp;
+        right = right % temp;
+        result = result && leftSingle == rightSingle;
+    }
+    return result;
+}
+```
+

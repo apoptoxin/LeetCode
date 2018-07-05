@@ -7,11 +7,11 @@
 //
 
 #include <stdio.h>
-#include "problem8.h"
+#include "problem9.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    char *s = "     -11009215950h";
-    printf("%d\n",myAtoi(s));
+//    char *s = "     -11009215950h";
+    printf("%d\n",isPalindrome(1221));
     return 0;
 }
