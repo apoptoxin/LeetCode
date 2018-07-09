@@ -30,29 +30,38 @@ int maxAreaWithOn2(int* height, int heightSize) {
 
 
 int maxAreaWithTwoPtr(int *height, int heightSize) {
-    int max = (height[0] < height[heightSize-1] ? height[heightSize - 1]:height[0]) * (heightSize);
-    int left = 0;
-    int right = heightSize - 1;
+    int max = 0;
     for (int i=0,j = heightSize-1; i<j;) {
-        //因为如果height[j] < height[right],那么从left到j组成的面积肯定比left到right小，所以没必要计算
-        while (height[j] <= height[right]) j--;
-        //计算一次
-        int area = maxInt(height[left], height[j]) * (j-left);
-        if (area > max) {
-            max = area;
-            right = j;
+        int high = height[i];
+        if (height[i] >= height[j]) {
+            high = height[j];
         }
-        while (height[i] <= height[left]) i++;
-        area = maxInt(height[i], height[j]);
+        int area = high * (j-i);
         if (area > max) {
             max = area;
-            left = i;
+        }
+        if (height[i] <= height[j]) {
+            i++;
+        } else {
+            j--;
         }
     }
     return max;
+//    int max = 0;
+//    for (int i=0,j = heightSize-1; i<j;) {
+//        int high = height[i] > height[j] ? height[i] : height[j];
+//        int area = high * (j-i);
+//        max = max > area ? max : area;
+//        if (height[i] < height[j]) {
+//            i++;
+//        } else {
+//            j--;
+//        }
+//    }
+//    return max;
 }
 
 int maxArea(int* height, int heightSize) {
-    return maxAreaWithOn2(height, heightSize);
+    return maxAreaWithTwoPtr(height, heightSize);
 }
 

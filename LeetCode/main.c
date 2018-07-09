@@ -7,11 +7,12 @@
 //
 
 #include <stdio.h>
-#include "problem10.h"
+#include "problem11.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    char *s = "     -11009215950h";
-    printf("%d\n",isMatch("a", ".*..a*"));
+    int a[] = {2,1};
+    printf("%d\n",maxArea(a, 2));
     return 0;
 }
