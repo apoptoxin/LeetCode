@@ -7,12 +7,12 @@
 //
 
 #include <stdio.h>
-#include "problem12.h"
+#include "problem13.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    char *s = "     -11009215950h";
     int a[] = {2,1};
-    printf("%s\n",intToRoman(88));
+    printf("%d\n",romanToInt("MCMXCIV"));
     return 0;
 }
