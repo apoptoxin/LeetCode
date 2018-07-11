@@ -7,12 +7,15 @@
 //
 
 #include <stdio.h>
-#include "problem13.h"
+#include "problem14.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    char *s = "     -11009215950h";
-    int a[] = {2,1};
-    printf("%d\n",romanToInt("MCMXCIV"));
+    char** a = malloc(sizeof(char*) * 3);//{"flower","flow","flight"};
+    a[0] = "flower";
+    a[1] = "flow";
+    a[2] = "flight";
+    printf("%d\n",longestCommonPrefix(a, 3));
     return 0;
 }
