@@ -8,18 +8,14 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem15.h"
+#include "problem16.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    char *s = "     -11009215950h";
-    int a[] = {-1,2,1,-4};
-    int res = 0;
-//    printf("%s\n",threeSum(a, 15, &res));
+    int a[] = {1,2,4,8,16,32,64,128};
+    int length = sizeof(a) / sizeof(int);
+    printf("%d\n",threeSumClosest(a, length, 82));
     
-    quickSort(a, sizeof(a) / sizeof(a[0]));
-    for (int i = 0 ; i < sizeof(a) / sizeof(a[0]); i++) {
-        printf("%d ",a[i]);
-    }
     return 0;
 }
