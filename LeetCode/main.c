@@ -7,15 +7,13 @@
 //
 
 #include <stdio.h>
-#include "problem14.h"
+#include "problem15.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    char *s = "     -11009215950h";
-    char** a = malloc(sizeof(char*) * 3);//{"flower","flow","flight"};
-    a[0] = "flower";
-    a[1] = "flow";
-    a[2] = "flight";
-    printf("%d\n",longestCommonPrefix(a, 3));
+    int a[] = {-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
+    int res = 0;
+    printf("%s\n",threeSum(a, 15, &res));
     return 0;
 }
