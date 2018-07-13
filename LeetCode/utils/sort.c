@@ -11,15 +11,18 @@
 
 void quickSortWithStartAndEnd(int* ori, int start, int end) {
     if (start >= end) return;
+    //start为哨兵
     int from = start + 1;
     int to = end;
     while (from < to) {
         //为什么先从尾部往前判断：原因就是避免判断是否所有元素都小于等于哨兵
-        while(from <= to && ori[to] > ori[start]) --to;
+        while(from <= to && ori[to] >= ori[start]) --to;
         while (from < to && ori[from] < ori[start]) ++from;
         if (to > from) swapTwoInts(&ori[from], &ori[to]);
     }
-    swapTwoInts(&ori[start], &ori[to]);
+    if (ori[start] > ori[to]) {
+        swapTwoInts(&ori[start], &ori[to]);
+    }
     quickSortWithStartAndEnd(ori, start, to-1);
     quickSortWithStartAndEnd(ori, to+1, end);
 }
