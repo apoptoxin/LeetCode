@@ -29,3 +29,88 @@
 ## p17 电话号码的字母组合
 
 递归+hashmap。hashmap仅作为加速用，我这里没写，我的写法就是纯遍历。
+
+## p18 四数之和
+
+现在如果推导到K-Sum问题，那么按照这个套路（虽然不一定最优，但是很容易想到也很好啊），做法是：  
+
+1. 排序
+2. 前K-2个数使用循环遍历组合  
+3. 最后两个数，在2选择剩余的区间内，设立p q指针，指向首尾，此时如果K个位置的和小于目标值，p++（注意条件4），大于的话 q–，等于的话输出。知道p>=q位置  
+4. 在改变前K-1个的指针时，如果移动后和移动前的值一样，那么要继续移动，直到不一样。。即前K-1个再做++等运算时都必须考虑到4这个条件。
+
+```c
+int** fourSum(int* nums, int numsSize, int target, int* returnSize) {
+    quickSort(nums, numsSize);
+    int total = 0;
+    int** result = NULL;
+    for (int k = 0 ; k < numsSize - 3 ; k++) {
+        if(k>0 && nums[k]==nums[k-1])continue;
+        for (int i = k+1 ; i < numsSize - 2; i++) {
+            if(i>k+1 && nums[i]==nums[i-1])continue;
+            //固定最小元素位置，在后面找两个元素和为-nums[i]的
+            for (int j = i+1, end = numsSize-1 ; j < end ;) {
+                //以i, j, end 这3个元素判断是否满足条件；
+                int cal = nums[k] + nums[i] + nums[j] + nums[end];
+                if (cal == target) {
+                    
+                    int* curPtr = (int*)malloc(sizeof(int) * 4);
+                    curPtr[0] = nums[k];
+                    curPtr[1] = nums[i];
+                    curPtr[2] = nums[j];
+                    curPtr[3] = nums[end];
+                    if (total == 0) {
+                        result = (int**)malloc(sizeof(int*));
+                    } else {
+                        result = (int**)realloc(result,(total+1)*sizeof(int*));
+                    }
+                    result[total] = curPtr;
+                    total++;
+                    do{++j;} while (end > j && nums[j] == nums[j-1]);
+                } else if (cal > target) {
+                    do{--end;} while (end > j && nums[end+1] == nums[end]);
+                } else {
+                    do{j++;} while (end > j && nums[j] == nums[j-1]);
+                }
+            }
+        }
+    }
+    *returnSize = total;
+    return result;
+}
+```
+
+## p19 删除链表的倒数第N个节点 
+
+遍历一遍就可以，思路没什么好说的，直接上代码就能看懂了
+
+```c
+struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
+    //当前指针
+    struct ListNode *cur = head;
+    //当前指针前面n个指针
+    struct ListNode *cur_n = head;
+    //当前指针前面n+1个指针
+    struct ListNode *cur_np1 = head;
+    int step = 0;
+    while (cur != NULL) {
+        if (step >= n-1) {
+            //保持不动
+            cur_np1 = cur_n;
+        }
+        if (step >= n) {
+            cur_n = cur_n->next;
+        }
+        cur = cur->next;
+        step++;
+    }
+    //需要去掉的是cur_n
+    if (cur_n == head && cur_n != NULL) {
+        head = head->next;
+    } else if (cur_np1 != NULL && cur_n != NULL) {
+        cur_np1->next = cur_n->next;
+    }
+    return head;
+}
+```
+
