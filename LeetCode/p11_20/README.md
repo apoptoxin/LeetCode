@@ -114,3 +114,39 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
 }
 ```
 
+## p20 有效的括号
+
+思路就是栈，左边各种括号就入栈，右边各种括号就出栈对比。C语言木有栈，那就用递归模拟栈。
+
+```c
+bool isValidWithStack(char cur, char **last) {
+    if (cur == 0 && strlen(*last) == 0) {
+        return true;
+    } else if (**last == ')' || **last == ']' || **last == '}') {
+        char a = **last;
+        bool t = false;
+        if (a == ')' && cur == '(') {
+            t = true;
+        } else if (a == ']' && cur == '[') {
+            t = true;
+        } else if (a == '}' && cur == '{') {
+            t = true;
+        }
+        *last = *last + 1;
+        return t;
+    } else if (**last == '(' || **last == '[' || **last == '{'){
+        char next = **last;
+        *last = *last+1;
+        bool t = isValidWithStack(next, last);
+        return t && isValidWithStack(cur, last);
+    } else {
+        return false;
+    }
+}
+
+bool isValid(char* s) {
+    char **t = &s;
+    return isValidWithStack(0, t);
+}
+```
+
