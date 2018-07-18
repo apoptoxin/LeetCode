@@ -33,6 +33,7 @@ bool isValidWithStack(char cur, char **last) {
     }
 }
 
+
 bool isValid(char* s) {
     char **t = &s;
     return isValidWithStack(0, t);
