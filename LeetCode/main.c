@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem32.h"
+#include "problem35.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
 //        printf("%d->", i->val);
 //    }
 //    printf("\n");
-//    int a[] = {3,2,2,3};
+    int a[] = {1,3,5,6};
 //    int length = removeElement(a, 4, 3);
 //    for (int i = 0 ; i<length; i++) {
 //        printf("%d ",a[i]);
@@ -32,7 +32,7 @@ int main(int argc, const char * argv[]) {
 //    word[0] = "foo";
 //    word[1] = "bar";
 //    int returnSize = 0;
-    printf("%d\n",longestValidParentheses(")(((((()())()()))()(()))("));
+    printf("%d\n",searchInsert(a, sizeof(a)/sizeof(int), 0));
     
     return 0;
 }
