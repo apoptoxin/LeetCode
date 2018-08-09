@@ -12,4 +12,7 @@
 
 [21~30题题解](LeetCode/p21_30/README.md)
 
+### p31~p40
+
+[31~40题题解](LeetCode/p31_40/README.md)
 
