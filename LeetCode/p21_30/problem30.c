@@ -128,12 +128,104 @@ bool canFix(struct IndexNode ** array, int arrayCount, int target) {
     return result;
 }
 
+int* findSubstringFuncTwo(char* s, char** words, int wordsSize, int* returnSize);
 /////////////////////////////// 主函数 /////////////////////////////////////////
 int* findSubstring(char* s, char** words, int wordsSize, int* returnSize) {
-    return findSubstringFucOne(s, words, wordsSize, returnSize);
+    return findSubstringFuncTwo(s, words, wordsSize, returnSize);
 }
 /////////////////////////////// 第二个解法 /////////////////////////////////////////
 
-//int* findSubstringFuncTwo(char* s, char** words, int wordsSize, int* returnSize) {
-//    
-//}
+struct InfoRecord {
+    char *key;
+    int count;
+};
+
+int* findSubstringFuncTwo(char* s, char** words, int wordsSize, int* returnSize) {
+    if (strlen(s) == 0 || wordsSize == 0 || strlen(s) < strlen(words[0]) * wordsSize) {
+        if (returnSize) {
+            *returnSize = 0;
+        }
+        return 0;
+    }
+    struct InfoRecord tmp[wordsSize];
+    int totalStrLength = strlen(s);
+    int singleWordLength;
+    int realWordsSize = 0;
+    int totalWordsLength = 0;
+    
+    for (int i = 0 ; i < wordsSize; i++) {
+        singleWordLength = strlen(words[i]);
+        totalWordsLength += singleWordLength;
+        bool find = false;
+        for (int j = 0; j < realWordsSize; j++) {
+            if (strcmp(tmp[j].key, words[i]) == 0) {
+                find = true;
+                tmp[j].count++;
+            }
+        }
+        if (!find) {
+            struct InfoRecord t = {.key=words[i],.count=1};
+            tmp[realWordsSize++] = t;
+        }
+    }
+    
+    //本身是应该用map的，c语言写的比较费劲，就降级用数组来查找~
+    int *curCount = malloc(sizeof(int) * realWordsSize);
+    for (int i = 0; i < realWordsSize; i++) {
+        curCount[i] = 0;
+    }
+    
+    int *mapCount = malloc(sizeof(int) * realWordsSize);
+    for (int i = 0; i < realWordsSize; i++) {
+        mapCount[i] = tmp[i].count;
+    }
+    
+    int *re = 0;
+    int totalResultCount = 0;
+    
+    for (int start = 0 ; start < totalStrLength - totalWordsLength + 1; start++) {
+        int end = start;
+        while (end < start + totalWordsLength) {
+            char *substr = malloc(sizeof(char) *(singleWordLength+1));
+            for (int k = 0; k<singleWordLength; k++) {
+                substr[k] = s[end+k];
+            }
+            substr[singleWordLength] = '\0';
+            
+            int index = -1;
+            for (int k = 0; k < realWordsSize; k++) {
+                if (strcmp(tmp[k].key, substr) == 0) {
+                    index = k;
+                }
+            }
+            if (index >= 0) {
+                curCount[index] ++;
+                if (curCount[index] > mapCount[index]) {
+                    break;
+                }
+            } else {
+                break;
+            }
+            end += singleWordLength;
+        }
+        if (end == start + totalWordsLength) {
+            if (totalResultCount == 0) {
+                re = malloc(sizeof(int));
+                re[0] = start;
+                totalResultCount ++;
+            } else {
+                ++totalResultCount;
+                re = realloc(re, totalResultCount*sizeof(int));
+                re[totalResultCount-1] = start;
+            }
+        }
+        for (int k = 0 ; k < realWordsSize; k++) {
+            curCount[k]=0;
+        }
+    }
+    
+    if (returnSize) {
+        *returnSize = totalResultCount;
+    }
+    return re;
+}

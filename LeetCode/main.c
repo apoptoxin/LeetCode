@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem35.h"
+#include "problem30.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -27,12 +27,12 @@ int main(int argc, const char * argv[]) {
 //    for (int i = 0 ; i<length; i++) {
 //        printf("%d ",a[i]);
 //    }
-//    char *s = "barfoothefoobarman";
-//    char **word = malloc(sizeof(char * )*0);
-//    word[0] = "foo";
-//    word[1] = "bar";
-//    int returnSize = 0;
-    printf("%d\n",searchInsert(a, sizeof(a)/sizeof(int), 0));
+    char *s = "barfoothefoobarman";
+    char **word = malloc(sizeof(char * )*0);
+    word[0] = "foo";
+    word[1] = "bar";
+    int returnSize = 0;
+    printf("%d\n",findSubstring(s, word, 2, &returnSize));
     
     return 0;
 }
