@@ -8,31 +8,26 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem30.h"
+#include "problem37.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-//    struct ListNode l1 = {5,NULL};
-//    struct ListNode l2 = {4,&l1};
-//    struct ListNode l3 = {3,&l2};
-//    struct ListNode l4 = {2,&l3};
-//    struct ListNode l5 = {1,&l4};
-    
-//    for (struct ListNode* i = &l5; i != NULL; i=i->next) {
-//        printf("%d->", i->val);
-//    }
-//    printf("\n");
-    int a[] = {1,3,5,6};
-//    int length = removeElement(a, 4, 3);
-//    for (int i = 0 ; i<length; i++) {
-//        printf("%d ",a[i]);
-//    }
-    char *s = "barfoothefoobarman";
-    char **word = malloc(sizeof(char * )*0);
-    word[0] = "foo";
-    word[1] = "bar";
-    int returnSize = 0;
-    printf("%d\n",findSubstring(s, word, 2, &returnSize));
-    
+    char a[9][9] = {{'5','3','.','.','7','.','.','.','.'},{'6','.','.','1','9','5','.','.','.'},{'.','9','8','.','.','.','.','6','.'},{'8','.','.','.','6','.','.','.','3'},{'4','.','.','8','.','3','.','.','1'},{'7','.','.','.','2','.','.','.','6'},{'.','6','.','.','.','.','2','8','.'},{'.','.','.','4','1','9','.','.','5'},{'.','.','.','.','8','.','.','7','9'}};
+    char **s = malloc(sizeof(char *)*9);
+    for (int i = 0; i < 9; i++) {
+        char *t = malloc(sizeof(char)*9);
+        for (int j = 0; j<9; j++) {
+            t[j] = a[i][j];
+        }
+        s[i] = t;
+    }
+    solveSudoku(s, 9, 9);
+    for (int i = 0 ; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            printf("%c ",s[i][j]);
+        }
+        printf("\n");
+    }
+//    printf("%d\n",isValidSudoku(s, 9, 9));
     return 0;
 }
