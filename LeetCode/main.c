@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
 //        }
 //        printf("\n");
 //    }
-    int a[] = {2,3,5};
+    int a[] = {2};
     int *p = malloc(sizeof(a)/sizeof(int));
     int size = 0;
     for (int i = 0 ; i < sizeof(a)/sizeof(int) ; i++) {
@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
     }
     int ** colS = malloc(sizeof(int*)*10000);
     int re = 0;
-    int **r = combinationSum(p, size, 8, colS, &re);
+    int **r = combinationSum(p, size, 1, colS, &re);
 //    printf("%s\n",countAndSay(10));
     return 0;
 }

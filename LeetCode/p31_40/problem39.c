@@ -16,15 +16,16 @@ int cmpfunc39 (const void * a, const void * b)
 
 int** combinationSum(int* candidates, int candidatesSize, int target, int** columnSizes, int* returnSize) {
     int total = 0;
-    int **result;
-    int *columnSize;
+    int **result = malloc(sizeof(int*));
+    int *columnSize = malloc(sizeof(int));
     int columnSizeCount = 0;
     int *tmp = malloc(sizeof(int) * target);//用于记录暂存的数值下标
     int pos = -1;
     qsort(candidates, candidatesSize, sizeof(int), cmpfunc39);
-    int axis = candidatesSize-1;
+    int axis = 0;
     int curTarget = target;
-    while (pos >= 0 || axis >= 0) {
+    while (pos >= 0 || axis < candidatesSize) {
+        ////////////////
         printf("tmp:");
         for (int i = 0 ; i <= pos ; i++) {
             printf("%d ",candidates[tmp[i]]);
@@ -56,11 +57,11 @@ int** combinationSum(int* candidates, int candidatesSize, int target, int** colu
             }
             //回滚最后一位
             curTarget += candidates[tmp[pos]];
-            axis = tmp[pos] - 1;
+            axis = tmp[pos] + 1;
             pos--;
-            while (axis < 0 && pos >= 0) {
+            while (axis >= candidatesSize && pos >= 0) {
                 curTarget += candidates[tmp[pos]];
-                axis = tmp[pos] - 1;
+                axis = tmp[pos] + 1;
                 pos--;
             }
         } else {
