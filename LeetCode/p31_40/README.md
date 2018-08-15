@@ -195,5 +195,174 @@ int searchInsertPosition(int *nums, int start, int end, int target) {
 }
 ```
 
+## p36 有效的数独
+使用O(n)的额外空间，用位运算，假设第i行有5 那么 col[i] = col[i] | 1<<5;
+```c
+int col[9] = {0}; //表示第i行的值
+int row[9] = {0}; //表示第i列的值
+int rec[9] = {0}; //rec表示3*3的方格，下标=行下标/3*3+列下标/3
+```
 
+依次遍历每个点，即可得到结果
+
+```c
+bool isValidSudoku(char** board, int boardRowSize, int boardColSize) {
+    //用位运算，假设第i行有5 那么 col[i] = col[i] | 1<<5;
+    int col[9] = {0}; //表示第i行的值
+    int row[9] = {0}; //表示第i列的值
+    int rec[9] = {0}; //rec表示3*3的方格，下标=行下标/3*3+列下标/3
+    for (int i = 0 ; i < 9 && i < boardRowSize; i++) {
+        for (int j = 0 ; j < 9 && j < boardColSize; j++) {
+            char c = board[i][j];
+            if (c == '.') {
+                continue;
+            }
+            int t = 1 << (c-'0');
+            int ri = (i/3)*3+(j/3);
+            if ((row[i] & t) > 0) {
+                return false;
+            } else if ((col[j] & t) > 0) {
+                return false;
+            } else if ((rec[ri] & t) > 0) {
+                return false;
+            }
+            row[i] |= t;
+            col[j] |= t;
+            rec[ri] |= t;
+        }
+    }
+    return true;
+}
+```
+
+## p37 解数独
+深度优先遍历，每次取个数填，看是否满足
+第36题的改进版
+
+## p38 报数
+报数序列是指一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。
+
+这个题主要就是理解题意，看前5个数可能看不出规律，那么再多看一下
+```
+ 1.     1
+ 2.     11
+ 3.     21
+ 4.     1211
+ 5.     111221 
+ 6.     312211
+ 7.     13112221
+ 8.     1113213211
+ 9.     31131211131221
+10.     13211311123113112211
+```
+
+这样就比较明显了，后一个数是前一个数中，重头爱是统计个数，比如第5个是111221，那么第6个就是：3个1，2个2，1个1。所以第六个数为312211.
+看懂题之后就好解决了，遍历就可以得到结果。
+下面是网上看到的一个解答，思路一样，只是细节可能稍微好些，执行时间短：
+```c
+char* countAndSay(int n) {
+    char *num = (char*)malloc(sizeof(char)*2);
+    char *num1, *p, *q;
+    int index;
+    // char c;
+    
+    num[0] = '1';
+    num[1] = '\0';
+    while(n>1){
+        index = 0;
+        p = q = num;
+        num1 = (char*)malloc(sizeof(char)*strlen(num)*2+1);
+        
+        while(*q){
+            if(*p != (*(q + 1))){
+                num1[index++] = q - p + '1';
+                num1[index++] = *p;
+                p = q + 1;
+            }
+            q++;
+        }
+        num1[index] = '\0';
+        
+        free(num);
+        num = num1;
+        
+        n--;
+    }
+    
+    return num;
+}
+```
+
+## p39 组合总和
+排序+深度优先遍历，直接上代码:
+```c
+int cmpfunc39 (const void * a, const void * b)
+{
+    return ( *(int*)a - *(int*)b );
+}
+
+int** combinationSum(int* candidates, int candidatesSize, int target, int** columnSizes, int* returnSize) {
+    int total = 0;
+    int **result = malloc(sizeof(int*));
+    int *columnSize = malloc(sizeof(int));
+    int columnSizeCount = 0;
+    int *tmp = malloc(sizeof(int) * target);//用于记录暂存的数值下标
+    int pos = -1;
+    qsort(candidates, candidatesSize, sizeof(int), cmpfunc39);
+    int axis = 0;
+    int curTarget = target;
+    while (pos >= 0 || axis < candidatesSize) {
+        ////////////////
+        printf("tmp:");
+        for (int i = 0 ; i <= pos ; i++) {
+            printf("%d ",candidates[tmp[i]]);
+        }
+        printf("\r\npos:%d curAxisVal:%d curTar:%d\n\r",pos,candidates[axis],curTarget);
+        ////////////////
+        if (curTarget <= 0) {
+            if (curTarget == 0) {
+                int *out = malloc(sizeof(int) * (pos+1));
+                for (int i = 0 ; i <= pos; i++) {
+                    out[i] = candidates[tmp[i]];
+                }
+                if (total == 0) {
+                    result = malloc(sizeof(int *));
+                    
+                    result[0] = out;
+                } else {
+                    result = realloc(result,sizeof(int*)*(total+1));
+                    result[total] = out;
+                }
+                if (columnSizeCount == 0) {
+                    columnSize = malloc(sizeof(int));
+                } else {
+                    columnSize = realloc(columnSize, sizeof(int) * (columnSizeCount+1));
+                }
+                columnSize[columnSizeCount] = pos + 1;
+                columnSizeCount++;
+                total++;
+            }
+            //回滚最后一位
+            curTarget += candidates[tmp[pos]];
+            axis = tmp[pos] + 1;
+            pos--;
+            while (axis >= candidatesSize && pos >= 0) {
+                curTarget += candidates[tmp[pos]];
+                axis = tmp[pos] + 1;
+                pos--;
+            }
+        } else {
+            tmp[++pos] = axis;
+            curTarget -= candidates[axis];
+        }
+    }
+    if (returnSize) {
+        *returnSize = total;
+    }
+    if (columnSizes) {
+        *columnSizes = columnSize;
+    }
+    return result;
+}
+```
 
