@@ -38,6 +38,6 @@ int main(int argc, const char * argv[]) {
 //    int ** colS = malloc(sizeof(int*)*10000);
 //    int re = 0;
 //    int **r = combinationSum2(p, size, 8, colS, &re);
-    printf("%d\n",isMatch44("aaabbbaabaaaaababaabaaabbabbbbbbbbaabababbabbbaaaaba","a*******b"));
+    printf("%d\n",isMatch44("adceb","*a*b"));
     return 0;
 }

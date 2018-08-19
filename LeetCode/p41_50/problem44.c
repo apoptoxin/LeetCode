@@ -8,38 +8,51 @@
 
 #include "problem44.h"
 
-bool isMatch44_1(char* s, char* p) {
-    if (strlen(s) == 0) {
-        if (strlen(p) > 0 && p[0] == '*') {
-            return isMatch(s, p+1);
-        } else if (strlen(p) == 0){
-            return true;
-        } else {
-            return false;
+void contructTable(int **table, char* s, char* p) {
+    int slen = strlen(s);
+    int plen = strlen(p);
+    for (int i = 0 ; i < slen; i++) {
+        for (int j = 0 ; j < plen; j++) {
+            if (p[j] == '*') {
+                if (i == 0 && j == 0) {
+                    table[i][j] = true;
+                } else if(i == 0){
+                    table[i][j] = table[i][j-1];
+                } else if(j == 0){
+                    table[i][j] = true;
+                } else {
+                    table[i][j] = table[i-1][j-1] || /*匹配多个*/table[i][j-1] || /*匹配0个*/table[i-1][j];
+                }
+            } else {
+                if (i == 0 && j == 0) {
+                    table[i][j] = (s[i] == p[j] || p[j] == '?');
+                } else if(i == 0){
+                    if (p[j-1] == '*') {
+                        //有去重，所以j-2不可能为*
+                        if (j == 1) {
+                            table[i][j] = (s[i] == p[j] || p[j] == '?');
+                        } else {
+                            table[i][j] = false;
+                        }
+                    } else {
+                        table[i][j] = false;
+                    }
+                } else if(i == 0 || j == 0){
+                    table[i][j] = false;
+                } else {
+                    table[i][j] = table[i-1][j-1] && (s[i] == p[j] || p[j] == '?');
+                }
+            }
         }
-    } else if (strlen(p) == 0) {
-        return false;
-    }
-    //这里s长度不为0，p长度也不为0
-    //p遇到 ?
-    if (p[0] == '?') {
-        return isMatch(s+1, p+1);
-    } else if (p[0] == '*') {
-        bool re = false;
-        for (int i = 0; i <= strlen(s) && re == false; i++) {
-            re = isMatch(s+i, p+1);
-        }
-        return re;
-    } else {
-        return p[0] == s[0] && isMatch(s+1,p+1);
     }
 }
 
 bool isMatch44(char* s, char* p) {
-    //去掉连续的*
     char *newp = malloc(sizeof(char) * (strlen(p) + 1));
     int pos = 0;
-    for (int i = 0; i < strlen(p); i++) {
+    int plen = strlen(p);
+    int slen = strlen(s);
+    for (int i = 0; i < plen; i++) {
         if (pos > 0 && newp[pos - 1] == '*' && p[i] == '*') {
             continue;
         } else {
@@ -47,5 +60,26 @@ bool isMatch44(char* s, char* p) {
         }
     }
     newp[pos] = '\0';
-    return isMatch44_1(s, newp);
+    if (slen == 0 && (pos == 0 || (pos == 1 && newp[0]=='*'))) {
+        return true;
+    }
+    if (slen == 0) {
+        return false;
+    }
+    int **table = malloc(sizeof(int*) * strlen(s));
+    for (int i = 0 ; i < slen; i++) {
+        int *t = malloc(sizeof(int) * pos);
+        // for (int j = 0 ; j < strlen(newp); j++) {
+        //     t[j] = -1;
+        // }
+        table[i] = t;
+    }
+    contructTable(table,s, newp);
+    // for (int i = 0 ; i < strlen(s); i++) {
+    //     for (int j = 0 ; j < strlen(newp); j++) {
+    //         printf("%d ",table[i][j]);
+    //     }
+    //     printf("\n");
+    // }
+    return table[slen-1][pos-1];
 }
