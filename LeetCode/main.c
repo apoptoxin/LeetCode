@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem43.h"
+#include "problem44.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -38,6 +38,6 @@ int main(int argc, const char * argv[]) {
 //    int ** colS = malloc(sizeof(int*)*10000);
 //    int re = 0;
 //    int **r = combinationSum2(p, size, 8, colS, &re);
-    printf("%s\n",multiply("140", "721"));
+    printf("%d\n",isMatch44("aaabbbaabaaaaababaabaaabbabbbbbbbbaabababbabbbaaaaba","a*******b"));
     return 0;
 }
