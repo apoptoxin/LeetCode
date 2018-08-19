@@ -83,3 +83,38 @@ bool isMatch44(char* s, char* p) {
     // }
     return table[slen-1][pos-1];
 }
+
+bool isMatch_better(char* s, char* p) {
+    if (s == NULL && p == NULL)
+        return true;
+    
+    int m = strlen(s);
+    int n = strlen(p);
+    if (m == 0 && n == 0)   return true;
+    int si = 0, pi = 0;
+    int xidx = -1, mtch = -1;
+    while (si < m) {
+        if (pi < n && (*(p + pi) == '*'))
+        {
+            xidx = pi++;
+            mtch = si;
+        }
+        else if (pi < n && (*(s + si) == *(p + pi) || *(p + pi) == '?'))
+        {
+            ++si;
+            ++pi;
+        }
+        else if (xidx > -1) {
+            pi = xidx + 1;
+            si = ++mtch;
+        }
+        else {
+            return false;
+        }
+    }
+    while (pi < n && (*(p + pi) == '*'))
+    {
+        ++pi;
+    }
+    return (pi == n);
+}
