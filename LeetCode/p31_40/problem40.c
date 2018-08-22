@@ -32,8 +32,8 @@ int** combinationSum2(int* candidates, int candidatesSize, int target, int** col
         }
         printf("\r\npos:%d curAxisVal:%d curTar:%d\n\r",pos,candidates[axis],curTarget);
         ////////////////
-        if (curTarget <= 0) {
-            if (curTarget == 0) {
+        if (curTarget <= 0 || axis > candidatesSize) {
+            if (curTarget == 0 && axis <= candidatesSize) {
                 int *out = malloc(sizeof(int) * (pos+1));
                 for (int i = 0 ; i <= pos; i++) {
                     out[i] = candidates[tmp[i]];
@@ -58,10 +58,16 @@ int** combinationSum2(int* candidates, int candidatesSize, int target, int** col
             //回滚最后一位
             curTarget += candidates[tmp[pos]];
             axis = tmp[pos] + 1;
+            while (axis >= 1 && candidates[axis] == candidates[axis-1]) {
+                axis++;
+            }
             pos--;
             while (axis >= candidatesSize && pos >= 0) {
                 curTarget += candidates[tmp[pos]];
                 axis = tmp[pos] + 1;
+                while (axis >= 1 && candidates[axis] == candidates[axis-1]) {
+                    axis++;
+                }
                 pos--;
             }
         } else {
@@ -78,3 +84,30 @@ int** combinationSum2(int* candidates, int candidatesSize, int target, int** col
     }
     return result;
 }
+
+//class Solution {
+//public:
+//    void dfs(vector<int>& candidates, int target, vector<vector<int>> &re, vector<int> &temp, int sum, int index){
+//        if (sum > target)  return;//减支
+//        if (sum == target) {
+//            re.push_back(temp);
+//            return;
+//        }
+//
+//        for (int i = index + 1; i < candidates.size(); ++i){//从这个数的后面开始进行搜索
+//            if (i != index + 1 && candidates[i] == candidates[i - 1]) continue;//同一层中，后面的数和前面相同的时候，会出现重复，直接continue。
+//            temp.push_back(candidates[i]);
+//            dfs(candidates, target, re, temp, sum + candidates[i], i);
+//            temp.pop_back();
+//        }
+//    }
+//
+//    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+//        sort(candidates.begin(), candidates.end());//排序，方便后来减支
+//        vector<vector<int>> re;
+//        vector<int> temp;
+//        dfs(candidates, target, re, temp, 0, -1);
+//        return re;
+//    }
+//};
+
