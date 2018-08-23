@@ -22,3 +22,41 @@ int firstMissingPositive(int* nums, int numsSize) {
 }
 ```
 
+
+## p42 接雨水
+第一步：从左向右遍历，遇到比当前轴高的就计算高度并更新当前轴位置，否则就继续算下一个位置
+第二步：从右向左遍历，遇到比当前轴高或相等的就计算高度并更新当前轴位置，否则就继续算下一个位置
+
+```c
+int trap(int* height, int heightSize) {
+    int area = 0;
+    int count = 0;
+    int last = 0;
+    for (int i = 0 ; i < heightSize ; i++) {
+        if (height[i] <= height[last]) {
+            count += height[i];
+        } else {
+            area += (height[last] * (i - last) - count);
+            last = i;
+            count = height[i];
+        }
+    }
+    last = heightSize - 1;
+    count = 0;
+    for (int i = heightSize - 1 ; i >= 0 ; i--) {
+        if (height[i] < height[last]) {
+            count += height[i];
+        } else {
+            area += (height[last] * (last - i) - count);
+            last = i;
+            count = height[i];
+        }
+    }
+    return area;
+}
+```
+
+## p43 字符串相乘
+思路就是一位一位的乘，累加，就模拟计算乘法的过程就行了
+
+## p44 通配符匹配

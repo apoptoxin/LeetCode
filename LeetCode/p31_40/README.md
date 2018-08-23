@@ -366,3 +366,6 @@ int** combinationSum(int* candidates, int candidatesSize, int target, int** colu
 }
 ```
 
+
+## p40 组合总和 II
+和39题思路一样，只是遇到重复的就跳过。代码就不贴了
