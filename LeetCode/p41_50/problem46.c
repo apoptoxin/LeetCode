@@ -9,45 +9,42 @@
 #include "problem46.h"
 #include <stdlib.h>
 
+void constructSingle(int* nums, int numsSize, int** result, int *posToSave, int axis) {
+    if (axis >= numsSize - 1) {
+        int *tmp = malloc(sizeof(int) * numsSize);
+        for (int i = 0; i < numsSize; i++) {
+            tmp[i] = nums[i];
+//            printf("%d ",tmp[i]);
+        }
+//        printf("\n------------------\n");
+        result[*posToSave] = tmp;
+        *posToSave = (*posToSave)+1;
+    }
+    //axis及之前的都固定，交换后面的
+    for (int i = axis + 1; i < numsSize ; i++) {
+        //交换axis+1和i
+        int tmp = nums[axis+1];
+        nums[axis+1] = nums[i];
+        nums[i] = tmp;
+        //继续
+        constructSingle(nums, numsSize, result, posToSave, axis+1);
+        //换回来
+        nums[i] = nums[axis+1];
+        nums[axis+1] = tmp;
+        
+    }
+}
+
 int** permute(int* nums, int numsSize, int* returnSize) {
-    int count = numsSize * numsSize;
+    int count = 1;
+    for (int i = 1 ; i <= numsSize; i++) {
+        count = count * i;
+    }
     if (returnSize) {
         *returnSize = count;
     }
     int ** re = malloc(sizeof(int *) *count);
-    int *tmp = malloc(sizeof(int) * numsSize);
-    for (int i = 0 ; i < numsSize; i++) {
-        tmp[i] = nums[i];
-    }
-    for (int i = 0 , pos = 0, cur = 0; i < count ; i++) {
-        if (i == 0) {
-            re[i] = tmp;
-        } else {
-            int *t = malloc(sizeof(int)*numsSize);
-            memcpy(t,tmp,sizeof(int)*numsSize);
-            if (cur < numsSize - 1) {
-                int a = t[cur];
-                t[cur] = t[cur+1];
-                t[++cur] = a;
-            } else {
-                int a = t[pos];
-                t[pos] = t[pos+1];
-                t[++pos] = a;
-                
-                int last = t[numsSize-1];
-                for (int k = numsSize-1; k > 0 ; k--) {
-                    t[k] = t[k-1];
-                }
-                t[0] = last;
-                cur = 0;
-            }
-            re[i] = t;
-            tmp = t;
-        }
-        for (int p = 0 ; p < numsSize ; p++) {
-            printf("%d ",re[i][p]);
-        }
-        printf("\n");
-    }
+    int pos = 0;
+    constructSingle(nums, numsSize, re, &pos, -1);
     return re;
 }

@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem40.h"
+#include "problem46.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
 //        }
 //        printf("\n");
 //    }
-    int a[] = {2,5,2,1,2};
+    int a[] = {1,2,3,4};
 //    int *p = malloc(sizeof(a)/sizeof(int));
 //    int size = 0;
 //    for (int i = 0 ; i < sizeof(a)/sizeof(int) ; i++) {
@@ -36,11 +36,17 @@ int main(int argc, const char * argv[]) {
 //        size++;
 //    }
     int returnSize = 0;
-    int *colSize = malloc(sizeof(int) * 1000);
-    int ** colS = combinationSum2(a, sizeof(a)/sizeof(int), 5, &colSize, &returnSize);
+    int numsSize = sizeof(a) / sizeof(int);
+    int ** colS = permute(a, numsSize, &returnSize);
 //    int re = 0;
 //    int total = 0;
 //    int **r = permute(a, sizeof(a)/sizeof(int), &total);
 //    printf("%d\n",jump(a, sizeof(a)/sizeof(int)));
+    for (int i = 0 ; i < returnSize ; i++) {
+        for (int j = 0 ; j < numsSize; j++) {
+            printf("%d ",colS[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
