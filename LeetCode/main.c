@@ -21,6 +21,19 @@ int main(int argc, const char * argv[]) {
 //        }
 //        s[i] = t;
 //    }
+//    char ori[6][3] = {{'e','a','t'}, {'t','e','a'}, {'t','a','n'},{'a','t','e'},{'n','a','t'},{'b','a','t'}};
+//    char **s = malloc(sizeof(char *)*9);
+//    for (int i = 0; i < 6; i++) {
+//        char *t = malloc(sizeof(char)*3);
+//        for (int j = 0; j<3; j++) {
+//            t[j] = ori[i][j];
+//        }
+//        s[i] = t;
+//    }
+//    int c = 0;
+//    int b = 0;
+//    int *p = &c;
+//    groupAnagrams(s,6,&p,&b);
 //    solveSudoku(s, 9, 9);
 //    for (int i = 0 ; i < 9; i++) {
 //        for (int j = 0; j < 9; j++) {
@@ -49,6 +62,7 @@ int main(int argc, const char * argv[]) {
         printf("\n");
     }
     
-    printf("\ncount:%d\n",returnSize);
+//    printf("\ncount:%f\n",myPow(34.00515, -3));
+//    printf("\nre:%f\n",pow(34.00515,-3));
     return 0;
 }

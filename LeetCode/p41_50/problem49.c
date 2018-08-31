@@ -9,48 +9,54 @@
 #include "problem49.h"
 #include <stdlib.h>
 
-struct StringNode {
-    char *origin;
-    int pos;
-    char *sorted;
-};
-
-int cmpfunc49Node (const void * a, const void * b)
-{
-    struct StringNode** t1 = (struct StringNode**)a;
-    struct StringNode** t2 = (struct StringNode**)b;
-    return strcmp((*t1)->sorted, (*t2)->sorted);
-}
-
 int cmpfunc49str(const void * a, const void * b)
 {
     return ( *(char*)a - *(char*)b );
 }
 
+int cmpfunc49Node (const void * a, const void * b)
+{
+    char **t1 = a;
+    char **t2 = b;
+    char *s1 = malloc(sizeof(char) * strlen(*t1));
+    char *s2 = malloc(sizeof(char) * strlen(*t2));
+    strcpy(s1, *t1);
+    strcpy(s2, *t2);
+    qsort(s1, strlen(s1), sizeof(char), cmpfunc49str);
+    qsort(s2, strlen(s2), sizeof(char), cmpfunc49str);
+    int result = strcmp(s1, s2);
+    free(s1);
+    free(s2);
+    return result;
+}
+
 char*** groupAnagrams(char** strs, int strsSize, int** columnSizes, int* returnSize) {
     //对每个单词进行sort
-    struct StringNode **list = malloc(sizeof(struct StringNode *) * strsSize);
-    for (int i = 0 ; i < strsSize ; i++) {
-        struct StringNode *cur = malloc(sizeof(struct StringNode));
-        cur->pos = i;
-        cur->origin = strs[i];
-        char *s = malloc(sizeof(char) * strlen(strs[i]));
-        strcpy(s, strs[i]);
-        qsort(s,strlen(strs[i]),sizeof(char),cmpfunc49str);
-        cur->sorted = s;
-        list[i] = cur;
-    }
-    qsort(list, strsSize, sizeof(struct StringNode*), cmpfunc49Node);
+    qsort(strs, strsSize, sizeof(char*), cmpfunc49Node);
     char ***result = malloc(sizeof(char**) * strsSize);
-    int *counts = NULL;
+    int *counts = malloc(sizeof(int) * strsSize);
     int countNum = 0;
     int pos = 0;
     for (int i = 0, from = 0; i <= strsSize ; i++) {
-        if ((i == strsSize) || (i != 0 && strcmp(list[i]->sorted, list[i-1]->sorted) != 0)) {
+        int r = 1;
+        if (i != strsSize && i > 0) {
+            char *s1 = malloc(sizeof(char) * strlen(strs[i]));
+            char *s2 = malloc(sizeof(char) * strlen(strs[i-1]));
+            strcpy(s1, strs[i]);
+            strcpy(s2, strs[i-1]);
+            qsort(s1, strlen(s1), sizeof(char), cmpfunc49str);
+            qsort(s2, strlen(s2), sizeof(char), cmpfunc49str);
+            r = strcmp(s1, s2);
+            free(s1);
+            free(s2);
+        }
+        
+        if (i > 0 && r != 0) {
             //from 到 i-1是相同的，构成一个char**
             char ** tmp = malloc(sizeof(char *) * i-from);
-            for (int j = 0 ; j <(i == strsSize - 1)?i+1-from:i-from ; j++) {
-                tmp[j] = list[from+j]->origin;
+            int max = ((i == strsSize - 1)?i+1-from:i-from);
+            for (int j = 0 ; j < max ; j++) {
+                tmp[j] = strs[from+j];
             }
             if (counts == NULL) {
                 counts = malloc(sizeof(int));
