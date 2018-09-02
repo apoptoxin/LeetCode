@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem49.h"
+#include "problem51.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -21,26 +21,26 @@ int main(int argc, const char * argv[]) {
 //        }
 //        s[i] = t;
 //    }
-    char ori[6][3] = {{'e','a','t'}, {'t','e','a'}, {'t','a','n'},{'a','t','e'},{'n','a','t'},{'b','a','t'}};
-    char **s = malloc(sizeof(char *)*9);
-    for (int i = 0; i < 6; i++) {
-        char *t = malloc(sizeof(char)*3);
-        for (int j = 0; j<3; j++) {
-            t[j] = ori[i][j];
-        }
-        s[i] = t;
-    }
-    int c = 0;
-    int b = 0;
-    int *p = &c;
-    groupAnagrams(s,6,&p,&b);
+//    char ori[6][3] = {{'e','a','t'}, {'t','e','a'}, {'t','a','n'},{'a','t','e'},{'n','a','t'},{'b','a','t'}};
+//    char **s = malloc(sizeof(char *)*9);
+//    for (int i = 0; i < 6; i++) {
+//        char *t = malloc(sizeof(char)*3);
+//        for (int j = 0; j<3; j++) {
+//            t[j] = ori[i][j];
+//        }
+//        s[i] = t;
+//    }
+//    int c = 0;
+//    int b = 0;
+//    int *p = &c;
+//    groupAnagrams(s,6,&p,&b);
 //    solveSudoku(s, 9, 9);
-    for (int i = 0 ; i < b; i++) {
-        for (int j = 0; j < p[i]; j++) {
-            printf("%s ",s[i][j]);
-        }
-        printf("\n");
-    }
+//    for (int i = 0 ; i < b; i++) {
+//        for (int j = 0; j < p[i]; j++) {
+//            printf("%s ",s[i][j]);
+//        }
+//        printf("\n");
+//    }
 //    int a[] = {-1,2,0,-1,1,0,1};
 //    int *p = malloc(sizeof(a)/sizeof(int));
 //    int size = 0;
@@ -64,5 +64,7 @@ int main(int argc, const char * argv[]) {
     
 //    printf("\ncount:%f\n",myPow(34.00515, -3));
 //    printf("\nre:%f\n",pow(34.00515,-3));
+    int size = 0;
+    char ***re = solveNQueens(4, &size);
     return 0;
 }
