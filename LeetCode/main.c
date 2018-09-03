@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem51.h"
+#include "problem55.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -64,7 +64,7 @@ int main(int argc, const char * argv[]) {
     
 //    printf("\ncount:%f\n",myPow(34.00515, -3));
 //    printf("\nre:%f\n",pow(34.00515,-3));
-    int size = 0;
-    char ***re = solveNQueens(4, &size);
+    int a[] = {0};
+    bool r = canJump(a, 1);
     return 0;
 }

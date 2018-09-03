@@ -32,6 +32,8 @@
 		C66F5DB520FE22CB00516D3C /* problem19.c in Sources */ = {isa = PBXBuildFile; fileRef = C66F5DB420FE22CB00516D3C /* problem19.c */; };
 		C66F5DD820FF45EC00516D3C /* problem20.c in Sources */ = {isa = PBXBuildFile; fileRef = C66F5DD720FF45EC00516D3C /* problem20.c */; };
 		C6746B82212908990002FDCC /* problem44.c in Sources */ = {isa = PBXBuildFile; fileRef = C6746B81212908990002FDCC /* problem44.c */; };
+		C675B150213D37E800BE0FB8 /* problem54.c in Sources */ = {isa = PBXBuildFile; fileRef = C675B14F213D37E800BE0FB8 /* problem54.c */; };
+		C675B153213D45AD00BE0FB8 /* problem55.c in Sources */ = {isa = PBXBuildFile; fileRef = C675B152213D45AD00BE0FB8 /* problem55.c */; };
 		C6A27183211042ED00553E93 /* problem30.c in Sources */ = {isa = PBXBuildFile; fileRef = C6A27182211042ED00553E93 /* problem30.c */; };
 		C6B2539B20DF36E5006CC395 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B2539A20DF36E5006CC395 /* main.c */; };
 		C6B253A720DF3D4D006CC395 /* sort.c in Sources */ = {isa = PBXBuildFile; fileRef = C6B253A620DF3D4D006CC395 /* sort.c */; };
@@ -129,6 +131,10 @@
 		C66F5DD720FF45EC00516D3C /* problem20.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem20.c; sourceTree = "<group>"; };
 		C6746B80212908990002FDCC /* problem44.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem44.h; sourceTree = "<group>"; };
 		C6746B81212908990002FDCC /* problem44.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem44.c; sourceTree = "<group>"; };
+		C675B14E213D37E800BE0FB8 /* problem54.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem54.h; sourceTree = "<group>"; };
+		C675B14F213D37E800BE0FB8 /* problem54.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem54.c; sourceTree = "<group>"; };
+		C675B151213D45AD00BE0FB8 /* problem55.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem55.h; sourceTree = "<group>"; };
+		C675B152213D45AD00BE0FB8 /* problem55.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem55.c; sourceTree = "<group>"; };
 		C6A27181211042ED00553E93 /* problem30.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem30.h; sourceTree = "<group>"; };
 		C6A27182211042ED00553E93 /* problem30.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem30.c; sourceTree = "<group>"; };
 		C6B2539720DF36E5006CC395 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -369,6 +375,10 @@
 				FB103C95213C207E0098CBDA /* problem52.c */,
 				FB103C97213C215A0098CBDA /* problem53.h */,
 				FB103C98213C215A0098CBDA /* problem53.c */,
+				C675B14E213D37E800BE0FB8 /* problem54.h */,
+				C675B14F213D37E800BE0FB8 /* problem54.c */,
+				C675B151213D45AD00BE0FB8 /* problem55.h */,
+				C675B152213D45AD00BE0FB8 /* problem55.c */,
 			);
 			path = p51_60;
 			sourceTree = "<group>";
@@ -458,6 +468,7 @@
 			files = (
 				C62132F620E0DB90007EEFA4 /* problem2.c in Sources */,
 				C60B544520F399320067C5FC /* problem13.c in Sources */,
+				C675B153213D45AD00BE0FB8 /* problem55.c in Sources */,
 				C6A27183211042ED00553E93 /* problem30.c in Sources */,
 				C61B817B212572A60005E84E /* problem43.c in Sources */,
 				C6BA00C020F5A378002A6D02 /* problem14.c in Sources */,
@@ -480,6 +491,7 @@
 				C6CE7A17211C540600409AC2 /* problem38.c in Sources */,
 				C66F5DD820FF45EC00516D3C /* problem20.c in Sources */,
 				C6F1359D2133967500DDA094 /* problem47.c in Sources */,
+				C675B150213D37E800BE0FB8 /* problem54.c in Sources */,
 				C6CE79D92117284D00409AC2 /* problem32.c in Sources */,
 				C62132F520E0DB90007EEFA4 /* problem1.c in Sources */,
 				C6E3F4D320F8CD7E00E40FCD /* problem17.c in Sources */,
