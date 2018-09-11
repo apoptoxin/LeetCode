@@ -8,18 +8,10 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem57.h"
+#include "problem60.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-
-    //[[1,3],[2,6],[8,10],[15,18]]
-    struct Interval *list = malloc(2*sizeof(struct Interval));
-    list[0] = (struct Interval){.start=1,.end=5};
-    list[1] = (struct Interval){.start=6,.end=9};
-//    list[2] = (struct Interval){.start=8,.end=10};
-//    list[3] = (struct Interval){.start=15,.end=18};
-    int size = 0;
-    insert(list, 4, (struct Interval){.start=5,.end=7},&size);
+    getPermutation(3, 3);
     return 0;
 }
