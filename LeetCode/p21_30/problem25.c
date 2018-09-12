@@ -2,7 +2,7 @@
 //  problem25.c
 //  LeetCode
 //
-//  Created by 刘楠 on 2018/7/24.
+//  Created by apoptoxin on 2018/7/24.
 //  Copyright © 2018年 micronil.com. All rights reserved.
 //
 

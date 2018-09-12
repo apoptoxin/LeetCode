@@ -13,6 +13,7 @@
 		C60FB24C21461A7D002484AB /* problem57.c in Sources */ = {isa = PBXBuildFile; fileRef = C60FB24B21461A7D002484AB /* problem57.c */; };
 		C60FB26321475D63002484AB /* problem58.c in Sources */ = {isa = PBXBuildFile; fileRef = C60FB26221475D63002484AB /* problem58.c */; };
 		C60FB26A21475FEB002484AB /* problem60.c in Sources */ = {isa = PBXBuildFile; fileRef = C60FB26921475FEB002484AB /* problem60.c */; };
+		C60FB2992148A749002484AB /* problem59.c in Sources */ = {isa = PBXBuildFile; fileRef = C60FB2982148A749002484AB /* problem59.c */; };
 		C613ED9020EC698500201C67 /* problem9.c in Sources */ = {isa = PBXBuildFile; fileRef = C613ED8F20EC698500201C67 /* problem9.c */; };
 		C61B8127212278220005E84E /* problem40.c in Sources */ = {isa = PBXBuildFile; fileRef = C61B8126212278220005E84E /* problem40.c */; };
 		C61B814D2123C3620005E84E /* problem41.c in Sources */ = {isa = PBXBuildFile; fileRef = C61B814C2123C3620005E84E /* problem41.c */; };
@@ -97,6 +98,8 @@
 		C60FB26221475D63002484AB /* problem58.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem58.c; sourceTree = "<group>"; };
 		C60FB26821475FEB002484AB /* problem60.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem60.h; sourceTree = "<group>"; };
 		C60FB26921475FEB002484AB /* problem60.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem60.c; sourceTree = "<group>"; };
+		C60FB2972148A749002484AB /* problem59.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem59.h; sourceTree = "<group>"; };
+		C60FB2982148A749002484AB /* problem59.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem59.c; sourceTree = "<group>"; };
 		C613ED8E20EC698500201C67 /* problem9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem9.h; sourceTree = "<group>"; };
 		C613ED8F20EC698500201C67 /* problem9.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem9.c; sourceTree = "<group>"; };
 		C61B8125212278220005E84E /* problem40.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem40.h; sourceTree = "<group>"; };
@@ -397,6 +400,8 @@
 				C60FB24B21461A7D002484AB /* problem57.c */,
 				C60FB26121475D63002484AB /* problem58.h */,
 				C60FB26221475D63002484AB /* problem58.c */,
+				C60FB2972148A749002484AB /* problem59.h */,
+				C60FB2982148A749002484AB /* problem59.c */,
 				C60FB26821475FEB002484AB /* problem60.h */,
 				C60FB26921475FEB002484AB /* problem60.c */,
 			);
@@ -545,6 +550,7 @@
 				C60FB26A21475FEB002484AB /* problem60.c in Sources */,
 				C60B544220F390350067C5FC /* problem12.c in Sources */,
 				FB103C96213C207E0098CBDA /* problem52.c in Sources */,
+				C60FB2992148A749002484AB /* problem59.c in Sources */,
 				C60FB231214605B2002484AB /* problem56.c in Sources */,
 				C6438183210EAFCE008230FC /* kmp.c in Sources */,
 				C6BA00C320F5D298002A6D02 /* problem15.c in Sources */,

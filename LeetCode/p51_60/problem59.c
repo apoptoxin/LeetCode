@@ -1,27 +1,29 @@
 //
-//  problem54.c
+//  problem59.c
 //  LeetCode
 //
-//  Created by apoptoxin on 2018/9/3.
+//  Created by apoptoxin on 2018/9/12.
 //  Copyright © 2018年 micronil.com. All rights reserved.
 //
 
-#include "problem54.h"
+#include "problem59.h"
 
-int* spiralOrder(int** matrix, int matrixRowSize, int matrixColSize) {
-    int total = matrixRowSize * matrixColSize;
+int** generateMatrix(int n) {
     int forward = 0;// 0 表示向右走，1表示向下走，2表示向左走，3表示向上走
-    int rightEnd = matrixColSize - 1;
-    int downEnd = matrixRowSize - 1;
+    int rightEnd = n - 1;
+    int downEnd = n - 1;
     int leftEnd = 0;
     int upEnd = 1;
     
-    int *result = malloc(sizeof(int) * total);
+    int **result = malloc(sizeof(int*) * n);
+    for (int i = 0 ; i < n ; i++) {
+        result[i] = malloc(sizeof(int) * n);
+    }
     int i = 0;
     int j = 0;
-    for (int p = 0 ; p < total ; p++) {
+    for (int p = 1 ; p <= n*n ; p++) {
         //把当前写入，根据方向判断下一个
-        result[p] = matrix[i][j];
+        result[i][j] = p;
         if (forward == 0) {
             if (j == rightEnd) {
                 forward = 1;//右转下
