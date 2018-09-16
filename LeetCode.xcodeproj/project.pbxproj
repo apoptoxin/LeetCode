@@ -71,6 +71,7 @@
 		FB103C99213C215A0098CBDA /* problem53.c in Sources */ = {isa = PBXBuildFile; fileRef = FB103C98213C215A0098CBDA /* problem53.c */; };
 		FBEC7A6220F0EAAB00916CC5 /* problem10.c in Sources */ = {isa = PBXBuildFile; fileRef = FBEC7A6120F0EAAB00916CC5 /* problem10.c */; };
 		FBEC7A6720F0F48A00916CC5 /* problem11.c in Sources */ = {isa = PBXBuildFile; fileRef = FBEC7A6620F0F48A00916CC5 /* problem11.c */; };
+		FBFA880E214E8AE0002457D9 /* problem61.c in Sources */ = {isa = PBXBuildFile; fileRef = FBFA880D214E8AE0002457D9 /* problem61.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -215,6 +216,8 @@
 		FBEC7A6320F0EB3D00916CC5 /* bool_define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bool_define.h; sourceTree = "<group>"; };
 		FBEC7A6520F0F48A00916CC5 /* problem11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem11.h; sourceTree = "<group>"; };
 		FBEC7A6620F0F48A00916CC5 /* problem11.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem11.c; sourceTree = "<group>"; };
+		FBFA880C214E8AE0002457D9 /* problem61.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem61.h; sourceTree = "<group>"; };
+		FBFA880D214E8AE0002457D9 /* problem61.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem61.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +331,7 @@
 		C6B2539920DF36E5006CC395 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				FBFA880B214E8AC4002457D9 /* p61_70 */,
 				FB103C90213C14360098CBDA /* p51_60 */,
 				C61B814A2123C3460005E84E /* p41_50 */,
 				C6CE79D3211723E700409AC2 /* p31_40 */,
@@ -435,6 +439,15 @@
 			path = p11_20;
 			sourceTree = "<group>";
 		};
+		FBFA880B214E8AC4002457D9 /* p61_70 */ = {
+			isa = PBXGroup;
+			children = (
+				FBFA880C214E8AE0002457D9 /* problem61.h */,
+				FBFA880D214E8AE0002457D9 /* problem61.c */,
+			);
+			path = p61_70;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,6 +552,7 @@
 				C6CE7A2221212BF000409AC2 /* problem39.c in Sources */,
 				C6E7132F20F849C3003906E0 /* problem16.c in Sources */,
 				C6438180210EAB95008230FC /* problem28.c in Sources */,
+				FBFA880E214E8AE0002457D9 /* problem61.c in Sources */,
 				C6CE79F32118510F00409AC2 /* problem34.c in Sources */,
 				C6E3F4D620FC560000E40FCD /* problem18.c in Sources */,
 				C620AEB72106C4E400FBC3A8 /* problem24.c in Sources */,
