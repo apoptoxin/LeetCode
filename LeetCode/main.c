@@ -8,10 +8,10 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem60.h"
+#include "problem62.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    getPermutation(3, 3);
+    int r = uniquePaths(3, 2);
     return 0;
 }
