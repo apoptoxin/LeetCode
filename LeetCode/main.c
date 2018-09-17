@@ -8,18 +8,18 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem62.h"
+#include "problem64.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int p[4][5] = {{0,1,0,0,0},{1,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}};
-    int ** a = malloc(sizeof(int *) *4);
-    for (int i = 0; i < 4; i++) {
-        a[i] = malloc(sizeof(int) * 5);
-        for (int j = 0; j < 5; j++) {
+    int p[2][3] = {{1,2,5},{3,2,1}};
+    int ** a = malloc(sizeof(int *) *2);
+    for (int i = 0; i < 2; i++) {
+        a[i] = malloc(sizeof(int) * 3);
+        for (int j = 0; j < 3; j++) {
             a[i][j] = 0;
         }
     }
-    int r = uniquePathsWithObstacles(a,4, 5);
+    int r = minPathSum(a,2,3);
     return 0;
 }
