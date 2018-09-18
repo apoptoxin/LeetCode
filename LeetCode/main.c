@@ -8,18 +8,12 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem64.h"
+#include "problem65.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int p[2][3] = {{1,2,5},{3,2,1}};
-    int ** a = malloc(sizeof(int *) *2);
-    for (int i = 0; i < 2; i++) {
-        a[i] = malloc(sizeof(int) * 3);
-        for (int j = 0; j < 3; j++) {
-            a[i][j] = 0;
-        }
-    }
-    int r = minPathSum(a,2,3);
+    
+//    bool r = isNumber(" 005047e+6");//1
+    bool r = isNumber(".e");//1
     return 0;
 }
