@@ -57,6 +57,129 @@ int trap(int* height, int heightSize) {
 ```
 
 ## p43 字符串相乘
-思路就是一位一位的乘，累加，就模拟计算乘法的过程就行了
+思路就是一位一位的乘然后加上进位，累加，就模拟计算乘法的过程就行了
 
 ## p44 通配符匹配
+思路1：
+动态规划
+
+
+1. p[j] == '\*' table[i][j] = table[i-1][j-1] || /\*匹配多个\*/table[i][j-1] || /\*匹配0个\*/table[i-1][j];
+2. p[j] == '?' table[i][j] = table[i-1][j-1];
+3. else table[i][j] = table[i-1][j-1] && s[i]==p[j]
+
+思路2：
+网上找来的，假设我们用两个指针分别指向s和p字符串中要匹配的位置，首先分析下通配符匹配过程中会有哪些情况是成功：
+1. s的字符和p的字符相等
+2. p中的字符是?，这时无论s的字符是什么都可以匹配一个
+3. p中遇到了一个\*，这时无论s的字符是什么都没关系
+4. 之前的都不符合，但是p在之前的位置有一个\*，我们可以从上一个\*后面开始匹配
+5. s已经匹配完，但是p后面还有很多连续的\*
+
+这里1和2的情况比较好处理，关键在于如何处理3和4的情况。当我们遇到一个\*时，因为之后可能要退回至该位置重新匹配，我们要将它的下标记录下来，比如idxstar。但是，当我们连续遇到两次4的情况，如何保证我还是能继续匹配s，而不是每次都退回idxstar+1导致循环呢？所以我们还要记录一个idxmatch，用来记录用上一个\*连续匹配到的s中的下标。最后，对于情况5，我们用一个循环跳过末尾的*跳过就行了。
+
+网上说这种算法的时间复杂度是O(n)，空间复杂度是O(1)。空间复杂度好理解，时间复杂度再看下。
+
+下面贴一下java的代码，c代码也可以按照这个写，写法差距不大，就不重新写了
+```c
+public class Solution {
+    public boolean isMatch(String s, String p) {
+        int idxs = 0, idxp = 0, idxstar = -1, idxmatch = 0;
+        while(idxs < s.length()){
+            // 当两个指针指向完全相同的字符时，或者p中遇到的是?时
+            if(idxp < p.length() && (s.charAt(idxs) == p.charAt(idxp) || p.charAt(idxp) == '?')){
+                idxp++;
+                idxs++;
+            // 如果字符不同也没有?，但在p中遇到是*时，我们记录下*的位置，但不改变s的指针
+            } else if(idxp < p.length() && p.charAt(idxp)=='*'){
+                idxstar = idxp;
+                idxp++;
+                //遇到*后，我们用idxmatch来记录*匹配到的s字符串的位置，和不用*匹配到的s字符串位置相区分
+                idxmatch = idxs;
+            // 如果字符不同也没有?，p指向的也不是*，但之前已经遇到*的话，我们可以从idxmatch继续匹配任意字符
+            } else if(idxstar != -1){
+                // 用上一个*来匹配，那我们p的指针也应该退回至上一个*的后面
+                idxp = idxstar + 1;
+                // 用*匹配到的位置递增
+                idxmatch++;
+                // s的指针退回至用*匹配到位置
+                idxs = idxmatch;
+            } else {
+                return false;
+            }
+        }
+        // 因为1个*能匹配无限序列，如果p末尾有多个*，我们都要跳过
+        while(idxp < p.length() && p.charAt(idxp) == '*'){
+            idxp++;
+        }
+        // 如果p匹配完了，说明匹配成功
+        return idxp == p.length();
+    }
+}
+```
+
+## p45 跳跃游戏II
+我们要探索所有的可能性，这里用快慢指针分出一块当前结点能跳的一块区域，然后再对这块区域遍历，找出这块区域能跳到的下一块区域的上下边界，每块区域都对应一步，直到上界超过终点时为之。
+```c
+int jump(int* nums, int numsSize) {
+    if (numsSize <= 1) {
+        return 0;
+    }
+    int *step = calloc(numsSize,sizeof(int));
+    for (int i = 0 ; i < numsSize; i++) {
+        for (int j = i+1; j - i <= nums[i] && j < numsSize ; j++) {
+            int cur = step[i] + 1;
+            if (step[j] == 0 || step[j] > cur) {
+                step[j] = cur;
+            }
+        }
+    }
+    return step[numsSize-1];
+}
+```
+
+## p46 全排列
+思路就是递归，每次交换一位，然后递归交换后面的
+具体见代码
+```c
+void constructSingle(int* nums, int numsSize, int** result, int *posToSave, int axis) {
+    if (axis >= numsSize - 1) {
+        int *tmp = malloc(sizeof(int) * numsSize);
+        for (int i = 0; i < numsSize; i++) {
+            tmp[i] = nums[i];
+//            printf("%d ",tmp[i]);
+        }
+//        printf("\n------------------\n");
+        result[*posToSave] = tmp;
+        *posToSave = (*posToSave)+1;
+    }
+    //axis及之前的都固定，交换后面的
+    for (int i = axis + 1; i < numsSize ; i++) {
+        //交换axis+1和i
+        int tmp = nums[axis+1];
+        nums[axis+1] = nums[i];
+        nums[i] = tmp;
+        //继续
+        constructSingle(nums, numsSize, result, posToSave, axis+1);
+        //换回来
+        nums[i] = nums[axis+1];
+        nums[axis+1] = tmp;
+        
+    }
+}
+
+int** permute(int* nums, int numsSize, int* returnSize) {
+    int count = 1;
+    for (int i = 1 ; i <= numsSize; i++) {
+        count = count * i;
+    }
+    if (returnSize) {
+        *returnSize = count;
+    }
+    int ** re = malloc(sizeof(int *) *count);
+    int pos = 0;
+    constructSingle(nums, numsSize, re, &pos, -1);
+    return re;
+}
+
+```
