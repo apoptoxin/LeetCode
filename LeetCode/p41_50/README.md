@@ -183,3 +183,60 @@ int** permute(int* nums, int numsSize, int* returnSize) {
 }
 
 ```
+
+## p47 全排列II
+解题思路和上一题类似，也是深度优先遍历搜索（DFS）.
+首先对所以的数字进行一次排序，然后从头开始，深度优先遍历，如果遇到重复的就跳过。
+具体实现可以看下代码
+
+## p48 旋转图像
+要把n*n矩阵顺时针旋转90度，需要进行以下2个步骤：
+
+1. 横向交换,每行第i个和倒数第i个交换(相当于以纵向中间为轴翻转）
+2. 对角线交换，以左下到右上为轴j进行旋转
+
+```c
+void rotate(int** matrix, int matrixRowSize, int *matrixColSizes) {
+    //step 1 横向交换，每行第i和和倒数第i个交换
+    for (int i = 0 ; i < matrixRowSize ; i++) {
+        for (int j = 0 ; j < matrixRowSize && j < matrixRowSize - 1 - j; j++) {
+            int tmp = matrix[i][j];
+            matrix[i][j] = matrix[i][matrixRowSize-1-j];
+            matrix[i][matrixRowSize-1-j] = tmp;
+        }
+    }
+    //step 2 对角线交换，以左下到右上为轴交换
+    for (int i = 0 ; i < matrixRowSize; i++) {
+        for (int j = 0 ; j < matrixRowSize && i + j < matrixRowSize-1; j++) {
+            int tmp = matrix[i][j];
+            matrix[i][j] = matrix[matrixRowSize-1-j][matrixRowSize-1-i];
+            matrix[matrixRowSize-1-j][matrixRowSize-1-i] = tmp;
+        }
+    }
+}
+
+```
+
+## p49 字母异位词分组
+解题思路就是分别统计每个单词中每个字母出现的次数，以这个作为key（由于这个次数不好作为key来存储，可以转化成，将对应的字母按顺序及出现次数排序构造出字符串作为key）。value就是对应的字符串在数组中位置所组成的数组了。
+统计之后直接输出结果即可
+
+## p50 pow(x,n)
+二分，注意n是正负数以及奇数偶数，还有注意越界
+```c
+double myPow(double x, int n) {
+    if (n == 0) {
+        return 1.0;
+    } else if (n == 1) {
+        return x;
+    } else if (n == -1) {
+        return 1.0/x;
+    }
+    double half = myPow(x, n/2);
+    if (n % 2 != 0) {
+        return half * half * ((n < 0) ? 1.0/x : x);
+    } else {
+        return half * half;
+    }
+}
+```
