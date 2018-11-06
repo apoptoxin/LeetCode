@@ -8,12 +8,13 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem65.h"
+#include "problem67.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     
 //    bool r = isNumber(" 005047e+6");//1
-    bool r = isNumber(".e");//1
+//    bool r = isNumber(".e");//1
+    char *s = addBinary("11", "1");
     return 0;
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C608789A21913B1A00C9F0FF /* problem66.c in Sources */ = {isa = PBXBuildFile; fileRef = C608789921913B1A00C9F0FF /* problem66.c */; };
+		C60878A321913EAF00C9F0FF /* problem67.c in Sources */ = {isa = PBXBuildFile; fileRef = C60878A221913EAF00C9F0FF /* problem67.c */; };
 		C60B544220F390350067C5FC /* problem12.c in Sources */ = {isa = PBXBuildFile; fileRef = C60B544120F390350067C5FC /* problem12.c */; };
 		C60B544520F399320067C5FC /* problem13.c in Sources */ = {isa = PBXBuildFile; fileRef = C60B544420F399320067C5FC /* problem13.c */; };
 		C60FB231214605B2002484AB /* problem56.c in Sources */ = {isa = PBXBuildFile; fileRef = C60FB230214605B2002484AB /* problem56.c */; };
@@ -94,6 +95,8 @@
 /* Begin PBXFileReference section */
 		C608789821913B1A00C9F0FF /* problem66.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem66.h; sourceTree = "<group>"; };
 		C608789921913B1A00C9F0FF /* problem66.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem66.c; sourceTree = "<group>"; };
+		C60878A121913EAE00C9F0FF /* problem67.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem67.h; sourceTree = "<group>"; };
+		C60878A221913EAF00C9F0FF /* problem67.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem67.c; sourceTree = "<group>"; };
 		C60B544020F390350067C5FC /* problem12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem12.h; sourceTree = "<group>"; };
 		C60B544120F390350067C5FC /* problem12.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem12.c; sourceTree = "<group>"; };
 		C60B544320F399320067C5FC /* problem13.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem13.h; sourceTree = "<group>"; };
@@ -469,6 +472,8 @@
 				C68AE7F8214F474B0095ADB1 /* problem65.c */,
 				C608789821913B1A00C9F0FF /* problem66.h */,
 				C608789921913B1A00C9F0FF /* problem66.c */,
+				C60878A121913EAE00C9F0FF /* problem67.h */,
+				C60878A221913EAF00C9F0FF /* problem67.c */,
 			);
 			path = p61_70;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				C6CE7A11211C30B400409AC2 /* problem36.c in Sources */,
 				C620AE442105809600FBC3A8 /* problem23.c in Sources */,
 				C6FE832820EB10EE00D03434 /* problem7.c in Sources */,
+				C60878A321913EAF00C9F0FF /* problem67.c in Sources */,
 				C68AE7F6214F44630095ADB1 /* problem64.c in Sources */,
 				C6438186210EB136008230FC /* problem29.c in Sources */,
 				C62132F720E0DB90007EEFA4 /* problem3.c in Sources */,
