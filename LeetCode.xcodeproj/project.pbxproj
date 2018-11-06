@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C608789A21913B1A00C9F0FF /* problem66.c in Sources */ = {isa = PBXBuildFile; fileRef = C608789921913B1A00C9F0FF /* problem66.c */; };
 		C60B544220F390350067C5FC /* problem12.c in Sources */ = {isa = PBXBuildFile; fileRef = C60B544120F390350067C5FC /* problem12.c */; };
 		C60B544520F399320067C5FC /* problem13.c in Sources */ = {isa = PBXBuildFile; fileRef = C60B544420F399320067C5FC /* problem13.c */; };
 		C60FB231214605B2002484AB /* problem56.c in Sources */ = {isa = PBXBuildFile; fileRef = C60FB230214605B2002484AB /* problem56.c */; };
@@ -91,6 +92,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C608789821913B1A00C9F0FF /* problem66.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem66.h; sourceTree = "<group>"; };
+		C608789921913B1A00C9F0FF /* problem66.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem66.c; sourceTree = "<group>"; };
 		C60B544020F390350067C5FC /* problem12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem12.h; sourceTree = "<group>"; };
 		C60B544120F390350067C5FC /* problem12.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem12.c; sourceTree = "<group>"; };
 		C60B544320F399320067C5FC /* problem13.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem13.h; sourceTree = "<group>"; };
@@ -464,6 +467,8 @@
 				C68AE7F5214F44630095ADB1 /* problem64.c */,
 				C68AE7F7214F474B0095ADB1 /* problem65.h */,
 				C68AE7F8214F474B0095ADB1 /* problem65.c */,
+				C608789821913B1A00C9F0FF /* problem66.h */,
+				C608789921913B1A00C9F0FF /* problem66.c */,
 			);
 			path = p61_70;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				C6438186210EB136008230FC /* problem29.c in Sources */,
 				C62132F720E0DB90007EEFA4 /* problem3.c in Sources */,
 				C61B8178212568840005E84E /* problem42.c in Sources */,
+				C608789A21913B1A00C9F0FF /* problem66.c in Sources */,
 				FB103C93213C14580098CBDA /* problem51.c in Sources */,
 				C61B814D2123C3620005E84E /* problem41.c in Sources */,
 				C66F5DB520FE22CB00516D3C /* problem19.c in Sources */,
