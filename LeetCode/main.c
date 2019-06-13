@@ -8,18 +8,18 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem72.h"
+#include "problem78.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     
 //    bool r = isNumber(" 005047e+6");//1
 //    bool r = isNumber(".e");//1
-    int size = 0;
-    char* word1 = "sea";
-    char* word2 = "eat";
-    printf("distance:%d\n",minDistance(word1, word2));
-    printf("\n");
+    int returnSize = 0;
+    int *col = malloc(sizeof(int));
+    int a[3] = {1,2,3};
+    int **re = subsets(a, 3, &returnSize, &col);
+//    printf("%s\n", minWindow(s,t));
     return 0;
 }
 
