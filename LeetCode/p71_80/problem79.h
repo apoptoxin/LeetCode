@@ -10,7 +10,7 @@
 #define problem79_h
 
 #include <stdio.h>
-
+#include "bool_define.h"
 #endif /* problem79_h */
 
 //给定一个二维网格和一个单词，找出该单词是否存在于网格中。
