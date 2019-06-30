@@ -52,6 +52,6 @@ int searchFromNums(int* nums, int start, int end, int target) {
     return -1;
 }
 
-int search(int* nums, int numsSize, int target) {
+int search33(int* nums, int numsSize, int target) {
     return searchFromNums(nums, 0, numsSize-1, target);
 }

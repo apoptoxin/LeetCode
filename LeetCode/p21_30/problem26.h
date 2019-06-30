@@ -49,4 +49,4 @@
 //    print(nums[i]);
 //}
 
-int removeDuplicates(int* nums, int numsSize);
+int removeDuplicates26(int* nums, int numsSize);

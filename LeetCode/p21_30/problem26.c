@@ -8,7 +8,7 @@
 
 #include "problem26.h"
 
-int removeDuplicates(int* nums, int numsSize) {
+int removeDuplicates26(int* nums, int numsSize) {
     int total = 0;
     int cur = -1;
     for (int i = 0 ; i < numsSize; i++) {

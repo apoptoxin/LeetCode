@@ -31,9 +31,6 @@
 //你的算法只能使用常数的额外空间。
 //你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
 
-struct ListNode {
-    int val;
-    struct ListNode *next;
-};
+#include "node.h"
 
 struct ListNode* reverseKGroup(struct ListNode* head, int k);
