@@ -53,6 +53,8 @@
 		C6438186210EB136008230FC /* problem29.c in Sources */ = {isa = PBXBuildFile; fileRef = C6438185210EB136008230FC /* problem29.c */; };
 		C647066422CAF9C5009264FA /* problem89.c in Sources */ = {isa = PBXBuildFile; fileRef = C647066322CAF9C5009264FA /* problem89.c */; };
 		C647066722D2E5C3009264FA /* problem90.c in Sources */ = {isa = PBXBuildFile; fileRef = C647066622D2E5C3009264FA /* problem90.c */; };
+		C647066B22D43542009264FA /* problem91.c in Sources */ = {isa = PBXBuildFile; fileRef = C647066A22D43542009264FA /* problem91.c */; };
+		C647066E22D43DBE009264FA /* problem92.c in Sources */ = {isa = PBXBuildFile; fileRef = C647066D22D43DBE009264FA /* problem92.c */; };
 		C66F5DB520FE22CB00516D3C /* problem19.c in Sources */ = {isa = PBXBuildFile; fileRef = C66F5DB420FE22CB00516D3C /* problem19.c */; };
 		C66F5DD820FF45EC00516D3C /* problem20.c in Sources */ = {isa = PBXBuildFile; fileRef = C66F5DD720FF45EC00516D3C /* problem20.c */; };
 		C6746B82212908990002FDCC /* problem44.c in Sources */ = {isa = PBXBuildFile; fileRef = C6746B81212908990002FDCC /* problem44.c */; };
@@ -209,6 +211,10 @@
 		C647066322CAF9C5009264FA /* problem89.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem89.c; sourceTree = "<group>"; };
 		C647066522D2E5C3009264FA /* problem90.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem90.h; sourceTree = "<group>"; };
 		C647066622D2E5C3009264FA /* problem90.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem90.c; sourceTree = "<group>"; };
+		C647066922D43542009264FA /* problem91.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem91.h; sourceTree = "<group>"; };
+		C647066A22D43542009264FA /* problem91.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem91.c; sourceTree = "<group>"; };
+		C647066C22D43DBE009264FA /* problem92.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem92.h; sourceTree = "<group>"; };
+		C647066D22D43DBE009264FA /* problem92.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem92.c; sourceTree = "<group>"; };
 		C66F5DB320FE22CB00516D3C /* problem19.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem19.h; sourceTree = "<group>"; };
 		C66F5DB420FE22CB00516D3C /* problem19.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = problem19.c; sourceTree = "<group>"; };
 		C66F5DD620FF45EC00516D3C /* problem20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = problem20.h; sourceTree = "<group>"; };
@@ -454,6 +460,17 @@
 			path = p71_80;
 			sourceTree = "<group>";
 		};
+		C647066822D4352B009264FA /* p91_100 */ = {
+			isa = PBXGroup;
+			children = (
+				C647066922D43542009264FA /* problem91.h */,
+				C647066A22D43542009264FA /* problem91.c */,
+				C647066C22D43DBE009264FA /* problem92.h */,
+				C647066D22D43DBE009264FA /* problem92.c */,
+			);
+			path = p91_100;
+			sourceTree = "<group>";
+		};
 		C6B2538E20DF36E5006CC395 = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +490,7 @@
 		C6B2539920DF36E5006CC395 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				C647066822D4352B009264FA /* p91_100 */,
 				C61BE0C822B9D27600EB2C2A /* p81_90 */,
 				C630C8E221A25C01003246D4 /* p71_80 */,
 				FBFA880B214E8AC4002457D9 /* p61_70 */,
@@ -716,12 +734,14 @@
 				C6CE7A11211C30B400409AC2 /* problem36.c in Sources */,
 				C620AE442105809600FBC3A8 /* problem23.c in Sources */,
 				C6FE832820EB10EE00D03434 /* problem7.c in Sources */,
+				C647066B22D43542009264FA /* problem91.c in Sources */,
 				C61BE10822C30FDB00EB2C2A /* problem85.c in Sources */,
 				C60878A321913EAF00C9F0FF /* problem67.c in Sources */,
 				C68AE7F6214F44630095ADB1 /* problem64.c in Sources */,
 				C6438186210EB136008230FC /* problem29.c in Sources */,
 				C62132F720E0DB90007EEFA4 /* problem3.c in Sources */,
 				C61B8178212568840005E84E /* problem42.c in Sources */,
+				C647066E22D43DBE009264FA /* problem92.c in Sources */,
 				C608789A21913B1A00C9F0FF /* problem66.c in Sources */,
 				FB103C93213C14580098CBDA /* problem51.c in Sources */,
 				C6E2006D22B890BA00CDD1DA /* problem80.c in Sources */,
