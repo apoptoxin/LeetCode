@@ -8,27 +8,14 @@
 
 #include <stdio.h>
 #include "sort.h"
-#include "problem90.h"
+#include "problem95.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int cur[] = {1,2,2};
-    int *a = malloc(sizeof(int) * 3);
-    for (int i = 0; i < 3 ; i++) {
-        a[i] = cur[i];
-    }
-    int returnSize = 0;
-    int *returnColumnSizes = NULL;
-    int **re = subsetsWithDup(a, 3, &returnSize, &returnColumnSizes);
-    for (int i = 0 ; i < returnSize; i++) {
-        printf("[");
-        for (int j = 0 ; j < returnColumnSizes[i]; j++) {
-            printf("%d",re[i][j]);
-            if (j!=returnColumnSizes[i]-1) {
-                printf(",");
-            }
-        }
-        printf("]\n");
-    }
+    int size = 0;
+    struct TreeNode** re = generateTrees(3, &size);
+//    for (int i = 0 ; i < size ; i++) {
+//        printf("%d ",re[i]);
+//    }
     return 0;
 }
